@@ -1,4 +1,4 @@
-FROM padhihomelab/alpine-base:3.16.0_0.19.0_0.2 as base
+FROM padhihomelab/alpine-base:3.16.2_0.19.0_0.2 as base
 ARG TARGETARCH
 
 FROM base AS base-amd64
