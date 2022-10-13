@@ -1,4 +1,4 @@
-FROM padhihomelab/alpine-base:3.16.0_0.19.0_0.2 as base
+FROM padhihomelab/alpine-base:3.16.2_0.19.0_0.2 as base
 ARG TARGETARCH
 
 FROM base AS base-amd64
@@ -12,7 +12,7 @@ ENV LIDARR_ARCH=arm
 
 FROM base-${TARGETARCH}${TARGETVARIANT}
 
-ARG LIDARR_VERSION=1.1.0.2602
+ARG LIDARR_VERSION=1.1.0.2649
 
 ARG LIDARR_BRANCH=master
 ADD "https://services.lidarr.audio/v1/update/nightly/updatefile?version=${LIDARR_VERSION}&os=linuxmusl&runtime=netcore&arch=${LIDARR_ARCH}" \
@@ -44,5 +44,5 @@ VOLUME [ "/config", "/downloads", "/music" ]
 
 CMD [ "lidarr" ]
 
-HEALTHCHECK --start-period=10s --interval=30s --timeout=5s --retries=3 \
-        CMD ["wget", "--tries", "5", "-qSO", "/dev/null",  "http://localhost:8686/"]
+HEALTHCHECK --start-period=10s --interval=30s --timeout=5s \
+        CMD ["wget", "--tries", "5", "-qSO", "/dev/null",  "http://127.0.0.1:8686/"]
