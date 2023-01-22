@@ -1,4 +1,4 @@
-FROM padhihomelab/alpine-base:3.16.3_0.19.0_0.2 as base
+FROM padhihomelab/alpine-base:3.17.0_0.19.0_0.2 as base
 ARG TARGETARCH
 
 FROM base AS base-amd64
@@ -12,9 +12,9 @@ ENV LIDARR_ARCH=arm
 
 FROM base-${TARGETARCH}${TARGETVARIANT}
 
-ARG LIDARR_VERSION=1.1.1.2762
+ARG LIDARR_VERSION=1.1.2.2935
+ARG LIDARR_BRANCH=develop
 
-ARG LIDARR_BRANCH=master
 ADD "https://services.lidarr.audio/v1/update/nightly/updatefile?version=${LIDARR_VERSION}&os=linuxmusl&runtime=netcore&arch=${LIDARR_ARCH}" \
     /tmp/lidarr.tar.gz
 
