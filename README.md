@@ -9,7 +9,7 @@
 
 ---
 
-A multiarch [Lidarr] Docker image.
+An [Alpine]-based multiarch [Lidarr] Docker image.
 
 Supported platforms:
 
@@ -39,7 +39,7 @@ Usage with [`docker compose`][docker compose] is similarly straightforward.
 As an example, you can see my configuration in [services/monitarr].
 
 
-[Alpine]:         https://alpinelinux.org/
-[docker compose]: https://docs.docker.com/compose/
+[Alpine]:            https://alpinelinux.org/
+[docker compose]:    https://docs.docker.com/compose/
 [Lidarr]:            https://lidarr.audio/
 [services/monitarr]: https://github.com/padhi-homelab/services/tree/master/monitarr
