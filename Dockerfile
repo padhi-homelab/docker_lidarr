@@ -12,7 +12,7 @@ ENV LIDARR_ARCH=arm
 
 FROM base-${TARGETARCH}${TARGETVARIANT}
 
-ARG LIDARR_VERSION=2.5.3.4341
+ARG LIDARR_VERSION=2.6.4.4402
 ARG LIDARR_BRANCH=master
 
 ADD "https://github.com/Lidarr/Lidarr/releases/download/v${LIDARR_VERSION}/Lidarr.${LIDARR_BRANCH}.${LIDARR_VERSION}.linux-musl-core-${LIDARR_ARCH}.tar.gz" \
