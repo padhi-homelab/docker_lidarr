@@ -1,4 +1,4 @@
-FROM padhihomelab/alpine-base:3.20.1_0.19.0_0.2 as base
+FROM padhihomelab/alpine-base:3.20.2_0.19.0_0.2 as base
 ARG TARGETARCH
 
 FROM base AS base-amd64
@@ -12,7 +12,7 @@ ENV LIDARR_ARCH=arm
 
 FROM base-${TARGETARCH}${TARGETVARIANT}
 
-ARG LIDARR_VERSION=2.6.4.4402
+ARG LIDARR_VERSION=2.7.1.4417
 ARG LIDARR_BRANCH=master
 
 ADD "https://github.com/Lidarr/Lidarr/releases/download/v${LIDARR_VERSION}/Lidarr.${LIDARR_BRANCH}.${LIDARR_VERSION}.linux-musl-core-${LIDARR_ARCH}.tar.gz" \
